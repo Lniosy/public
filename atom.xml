@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-04-09T17:45:19.927Z</updated>
+  <updated>2023-04-27T02:37:39.938Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Lniosy自述</title>
+    <link href="http://example.com/posts/6dd36f8b.html"/>
+    <id>http://example.com/posts/6dd36f8b.html</id>
+    <published>2023-04-27T01:07:18.000Z</published>
+    <updated>2023-04-27T02:37:39.938Z</updated>
+    
+    <content type="html"><![CDATA[<p>test</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;test&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>SQL注入</title>
-    <link href="http://example.com/2023/04/10/SQL%E6%B3%A8%E5%85%A5/"/>
-    <id>http://example.com/2023/04/10/SQL%E6%B3%A8%E5%85%A5/</id>
+    <link href="http://example.com/posts/e73517db.html"/>
+    <id>http://example.com/posts/e73517db.html</id>
     <published>2023-04-09T17:34:18.000Z</published>
-    <updated>2023-04-09T17:45:19.927Z</updated>
+    <updated>2023-04-27T02:37:39.940Z</updated>
     
     <content type="html"><![CDATA[<h1 id="SQL注入学习"><a href="#SQL注入学习" class="headerlink" title="SQL注入学习"></a><center>SQL注入学习</center></h1><p>SQL注入是一种常见的网络攻击方式，它利用了应用程序对用户输入数据的不完全过滤和验证，从而使攻击者可以通过构造恶意的SQL语句来获取或修改数据库中的数据。本文将介绍SQL注入的基本概念、攻击方式和防御措施。</p><h2 id="SQL注入的基本概念"><a href="#SQL注入的基本概念" class="headerlink" title="SQL注入的基本概念"></a>SQL注入的基本概念</h2><p>SQL注入是指攻击者通过在应用程序中注入恶意的SQL语句，从而获取或修改数据库中的数据。SQL注入攻击通常发生在Web应用程序中，因为Web应用程序通常需要从用户那里接收输入数据，并将其存储在数据库中。攻击者可以通过在输入数据中注入恶意的SQL语句，从而绕过应用程序的安全机制，执行恶意操作。</p><p>SQL注入攻击可以分为两种类型：盲注和非盲注。盲注是指攻击者无法直接获取数据库中的数据，而是通过不断尝试恶意SQL语句来获取数据。非盲注是指攻击者可以直接获取数据库中的数据，因为应用程序会将查询结果返回给攻击者。</p><h2 id="SQL注入的攻击方式"><a href="#SQL注入的攻击方式" class="headerlink" title="SQL注入的攻击方式"></a>SQL注入的攻击方式</h2><p>SQL注入攻击可以通过多种方式进行，以下是一些常见的攻击方式：</p><h3 id="1-基于错误的注入"><a href="#1-基于错误的注入" class="headerlink" title="1. 基于错误的注入"></a>1. 基于错误的注入</h3><p>攻击者可以通过构造恶意的SQL语句来引发应用程序的错误，从而获取数据库中的数据。例如，攻击者可以在输入框中输入以下内容：</p><p><code>&#39; OR 1=1; –</code></p><p>这个SQL语句会导致应用程序查询所有的数据，因为1&#x3D;1永远为真。攻击者可以通过这种方式获取数据库中的所有数据。</p><h3 id="2-基于联合查询的注入"><a href="#2-基于联合查询的注入" class="headerlink" title="2. 基于联合查询的注入"></a>2. 基于联合查询的注入</h3><p>攻击者可以通过构造恶意的SQL语句来执行联合查询，从而获取数据库中的数据。例如，攻击者可以在输入框中输入以下内容：<br><code>&#39; UNION SELECT username, password FROM users; –</code></p><p>这个SQL语句会将攻击者添加到用户表中，并返回所有用户的用户名和密码。攻击者可以通过这种方式获取数据库中的敏感数据。</p><h3 id="3-基于时间的注入"><a href="#3-基于时间的注入" class="headerlink" title="3. 基于时间的注入"></a>3. 基于时间的注入</h3><p>攻击者可以通过构造恶意的SQL语句来延迟应用程序的响应时间，从而获取数据库中的数据。例如，攻击者可以在输入框中输入以下内容：</p><p><code>&#39; AND SLEEP(5); –</code></p><p>这个SQL语句会导致应用程序等待5秒钟才返回结果。攻击者可以通过这种方式获取数据库中的数据。</p><h2 id="SQL注入的防御措施"><a href="#SQL注入的防御措施" class="headerlink" title="SQL注入的防御措施"></a>SQL注入的防御措施</h2><p>为了防止SQL注入攻击，应用程序需要采取以下措施：</p><h3 id="1-输入验证"><a href="#1-输入验证" class="headerlink" title="1. 输入验证"></a>1. 输入验证</h3><p>应用程序需要对用户输入数据进行验证和过滤，以确保输入数据符合预期的格式和类型。例如，应用程序可以使用正则表达式来验证输入数据是否为数字或字母。</p><h3 id="2-参数化查询"><a href="#2-参数化查询" class="headerlink" title="2. 参数化查询"></a>2. 参数化查询</h3><p>应用程序需要使用参数化查询来防止SQL注入攻击。参数化查询是指将用户输入数据作为参数传递给SQL语句，而不是将用户输入数据直接拼接到SQL语句中。这样可以确保用户输入数据不会被解释为SQL语句的一部分。</p><h3 id="3-最小权限原则"><a href="#3-最小权限原则" class="headerlink" title="3. 最小权限原则"></a>3. 最小权限原则</h3><p>应用程序需要使用最小权限原则来限制数据库用户的权限。例如，应用程序可以为每个用户创建一个独立的数据库用户，并为每个用户分配最小的权限，以确保用户只能访问其需要的数据。</p><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>SQL注入是一种常见的网络攻击方式，它可以通过构造恶意的SQL语句来获取或修改数据库中的数据。为了防止SQL注入攻击，应用程序需要采取输入验证、参数化查询和最小权限原则等措施。</p>]]></content>
     
